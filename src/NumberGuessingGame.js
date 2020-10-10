@@ -3,7 +3,7 @@ import './App.css';
 
 export class NumberGuessingGame extends React.Component {
 
-    constructor() {
+  constructor() {
       super();
       this.state = {
         target: Math.floor((Math.random() * 10)),
@@ -11,6 +11,7 @@ export class NumberGuessingGame extends React.Component {
         guess:0,
         message:""
       }
+      
       this.guessChange = this.guessChange.bind(this);
       this.checkGuess = this.checkGuess.bind(this);
       this.newGame = this.newGame.bind(this);
@@ -31,17 +32,18 @@ export class NumberGuessingGame extends React.Component {
     }
 
     checkGuess() {
-      var message;
+      var msg;
       if(this.state.guess < this.state.target) {
-        message = "Too Low!";
+        msg = "Too Low!";
       } else if (this.state.guess > this.state.target) {
-        message = "Too high!";
+        msg = "Too high!";
       } else {
-        message = "CORRECT!";
+        msg = "CORRECT!";
       }
       this.setState({
-        message: message,
-        turnsRemaining:this.state.turnsRemaining - 1});
+        message: msg,
+        turnsRemaining: this.state.turnsRemaining - 1
+      });
     }
 
     render()
@@ -66,7 +68,6 @@ export class NumberGuessingGame extends React.Component {
         </div>
       )
     }
-
 }
 
 export default NumberGuessingGame;
