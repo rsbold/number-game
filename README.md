@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Following an interview where the technical challenge was to create a simple number-guessing game in 
+C# in an hour, I thought I'd have a go at a very simple React solution.
+
 ## Available Scripts
 
 In the project directory, you can run:
