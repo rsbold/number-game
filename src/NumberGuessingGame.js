@@ -82,7 +82,7 @@ export class NumberGuessingGame extends React.Component {
       // Do we need to display a Game Over message?
       var gameOver;
       if(this.state.turnsRemaining === 0) {
-        gameOver = <p>Game Over</p>
+        gameOver = <span>Game Over</span>
       }
       
       // This is the whole UI for the game.
@@ -97,8 +97,8 @@ export class NumberGuessingGame extends React.Component {
             <label>Your guess:</label>
             <input type="number" value={this.state.guess} onChange={this.guessChange}/>
             <button onClick={this.checkGuess}>Check Guess</button>
-            <p>{this.state.message}</p>
-            <p>{gameOver}</p>
+            <span>{this.state.message}</span>
+            {gameOver}
           </p>
         </div>
       )
