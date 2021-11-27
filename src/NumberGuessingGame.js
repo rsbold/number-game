@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { Card, Row, Col, Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 
 export class NumberGuessingGame extends React.Component {
 
@@ -87,20 +89,36 @@ export class NumberGuessingGame extends React.Component {
       
       // This is the whole UI for the game.
       return(
-        <div>
-          <label>Difficulty (1, 2, 3)</label>
-          <input type="number" value={this.state.difficulty} onChange={this.setDifficulty} />
-          <button onClick={this.newGame}>New Game</button>
-          <p>hint: target is {this.state.target}</p>
-          <p>{this.state.turnsRemaining} turn(s) remaining</p>
-          <p>
-            <label>Your guess:</label>
-            <input type="number" value={this.state.guess} onChange={this.guessChange}/>
-            <button onClick={this.checkGuess}>Check Guess</button>
-            <span>{this.state.message}</span>
-            {gameOver}
-          </p>
-        </div>
+        <Card>
+          <Card.Header>Guess the Number</Card.Header>
+          <Card.Body>
+
+            <Row>
+              <Col lg={2}>Difficulty (1, 2, 3)</Col>
+              <Col lg={1}><Form.Control type="number" value={this.state.difficulty} onChange={this.setDifficulty} /></Col>
+            </Row>
+            <Row>
+              <Button onClick={this.newGame}>New Game</Button>
+            </Row>
+            <Row>
+              <p>hint: target is {this.state.target}</p>
+            </Row>
+            <Row>
+              <p>{this.state.turnsRemaining} turn(s) remaining</p>
+            </Row>
+            <Row>
+              <label>Your guess:</label>
+              <Form.Control type="number" value={this.state.guess} onChange={this.guessChange}/>
+              <Button onClick={this.checkGuess}>Check Guess</Button>
+            </Row>
+            <Row>
+              <span>{this.state.message}</span>
+            </Row>
+            <Row>
+              {gameOver}
+            </Row>
+          </Card.Body>
+        </Card>
       )
     }
 }
